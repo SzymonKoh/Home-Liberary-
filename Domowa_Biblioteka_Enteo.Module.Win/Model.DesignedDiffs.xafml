@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="22.1.11.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.1.11.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="22.1.11.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Book_DetailView" Index="0">
+      <Items>
+        <PropertyEditor Id="Authors" MaxLength="15" />
+        <PropertyEditor Id="Loans" MaxLength="40" />
+        <PropertyEditor Id="PublishDate" MaxLength="7" />
+        <PropertyEditor Id="Status" MaxLength="8" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Book">
+              <LayoutItem Id="Title" MaxSize="15, 0" />
+              <LayoutItem Id="Status" Index="2" MaxSize="8, 0" />
+              <LayoutItem Id="PublishDate" Index="3" MaxSize="7, 0" />
+              <LayoutItem Id="ISBN" Index="4" MaxSize="40, 0" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Loan_DetailView" Index="1" />
+    <DetailView Id="Person_DetailView" Index="2">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="Person" RelativeSize="18.942731277533039">
+            <LayoutGroup Id="Person_col1" RelativeSize="33.378378378378379">
+              <LayoutItem Id="FullName" RelativeSize="34.108527131782942" />
+              <LayoutItem Id="FirstName" SizeConstraintsType="Default" RelativeSize="20.155038759689923" />
+              <LayoutItem Id="LastName" ViewItem="LastName" Index="2" RelativeSize="20.155038759689923" IsNewNode="True" Removed="True" />
+              <LayoutItem Id="DisplayName" Index="3" RelativeSize="25.581395348837209" />
+              <LayoutItem Id="MiddleName" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Person_col2" RelativeSize="33.243243243243242">
+              <LayoutItem Id="Email" Index="0" RelativeSize="65.116279069767444" />
+              <LayoutItem Id="Birthday" Index="1" RelativeSize="18.6046511627907" />
+              <LayoutItem Id="Address1" Index="2" RelativeSize="7.7519379844961236" />
+              <LayoutItem Id="Address2" Index="3" RelativeSize="8.5271317829457356" />
+            </LayoutGroup>
+            <LayoutItem Id="Photo" RelativeSize="33.378378378378379" />
+          </LayoutGroup>
+          <LayoutGroup Id="Loans_Group" TextAlignMode="AlignWithChildren" Direction="Vertical" RelativeSize="81.057268722466958">
+            <LayoutItem Id="Loans" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Author_DetailView" Index="3">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Author">
+              <LayoutItem Id="FirstName" SizeConstraintsType="Default" MaxSize="0, 0" />
+              <LayoutItem Id="LastName" MaxSize="0, 0" SizeConstraintsType="Default" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Author_Books_ListView">
+      <Columns>
+        <ColumnInfo Id="Title" Width="214" MaxLength="35" SortOrder="Ascending" SortIndex="0" />
+        <ColumnInfo Id="Status" Index="2" Width="85" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="PublishDate" Width="96" Index="3" />
+        <ColumnInfo Id="ISBN" Index="4" MaxLength="55" Width="335" />
+      </Columns>
+    </ListView>
+    <ListView Id="Author_ListView">
+      <Columns>
+        <ColumnInfo Id="FirstName" Width="164" />
+        <ColumnInfo Id="LastName" Width="154" />
+      </Columns>
+    </ListView>
+    <ListView Id="Author_LookupListView">
+      <Columns>
+        <ColumnInfo Id="FirstName" Width="201" />
+        <ColumnInfo Id="LastName" PropertyName="LastName" Width="184" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="Book_Authors_ListView">
+      <Columns>
+        <ColumnInfo Id="Oid" Width="82" />
+        <ColumnInfo Id="FirstName" Width="152" />
+        <ColumnInfo Id="LastName" Width="162" />
+      </Columns>
+    </ListView>
+    <ListView Id="Book_ListView">
+      <Columns>
+        <ColumnInfo Id="Title" Width="254" />
+        <ColumnInfo Id="Status" Index="2" />
+        <ColumnInfo Id="PublishDate" Index="3" Width="100" />
+        <ColumnInfo Id="ISBN" Width="242" Index="4" />
+      </Columns>
+    </ListView>
+    <ListView Id="Book_Loans_ListView">
+      <Columns>
+        <ColumnInfo Id="LoanDate" Width="90" />
+        <ColumnInfo Id="Borrower" Width="224" />
+      </Columns>
+    </ListView>
+    <ListView Id="Loan_ListView">
+      <Columns>
+        <ColumnInfo Id="LoanDate" Width="92" />
+        <ColumnInfo Id="Borrower" Width="158" Index="1" />
+        <ColumnInfo Id="Book" Width="395" Index="2" />
+      </Columns>
+    </ListView>
+    <ListView Id="Loan_LookupListView">
+      <Columns>
+        <ColumnInfo Id="LoanDate" Width="101" />
+        <ColumnInfo Id="Borrower" Width="178" Index="1" />
+        <ColumnInfo Id="Book" Width="405" Index="2" />
+      </Columns>
+    </ListView>
+    <ListView Id="Person_ListView">
+      <Columns>
+        <ColumnInfo Id="FirstName" Width="145" />
+        <ColumnInfo Id="LastName" Width="211" />
+      </Columns>
+    </ListView>
+    <ListView Id="Person_Loans_ListView">
+      <Columns>
+        <ColumnInfo Id="LoanDate" Width="101" />
+        <ColumnInfo Id="Book" Width="312" />
+      </Columns>
+    </ListView>
+    <ListView Id="Person_LookupListView">
+      <Columns>
+        <ColumnInfo Id="FirstName" Width="172" />
+        <ColumnInfo Id="Last Name" PropertyName="LastName" Width="194" IsNewNode="True" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

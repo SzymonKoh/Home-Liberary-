@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Domowa Biblioteka Enteo">
+  <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
+    <Class Name="Domowa_Biblioteka_Enteo.Module.BusinessObjects.Book">
+      <AppearanceRules>
+        <AppearanceRule Id="GreenInStock" Criteria="[Status] = ##Enum#Domowa_Biblioteka_Enteo.Module.BusinessObjects.Status,InStock#" BackColor="128, 255, 128" TargetItems="*" IsNewNode="True" />
+        <AppearanceRule Id="OrangeReturned" TargetItems="*" BackColor="255, 192, 128" FontStyle="Bold" Criteria="[Status] = ##Enum#Domowa_Biblioteka_Enteo.Module.BusinessObjects.Status,Returned#" IsNewNode="True" />
+        <AppearanceRule Id="RedOnLoan" TargetItems="*" BackColor="255, 128, 128" Criteria="[Status] = ##Enum#Domowa_Biblioteka_Enteo.Module.BusinessObjects.Status,OnLoan#" FontStyle="Italic" IsNewNode="True" />
+        <AppearanceRule Id="YellowUnknown" TargetItems="*" BackColor="255, 255, 128" FontStyle="Underline" Criteria="[Status] = ##Enum#Domowa_Biblioteka_Enteo.Module.BusinessObjects.Status,Unknown#" IsNewNode="True" />
+      </AppearanceRules>
+    </Class>
+  </BOModel>
+  <Localization>
+    <LocalizationGroup Name="Captions">
+      <LocalizationItem Name="DashboardView" Value="DashboardView" />
+      <LocalizationItem Name="DetailView" Value="Biblioteka" />
+    </LocalizationGroup>
+  </Localization>
+  <NavigationItems StartupNavigationItem="" />
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" CaptionColon=":" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="22.1.11.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.1.11.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="ApplicationUser_ListView" Caption="Users" />
+  </Views>
+</Application>

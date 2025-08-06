@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Logo="ExpressAppLogo">
+  <Localization>
+    <LocalizationGroup Name="Captions">
+      <LocalizationItem Name="DetailView" Value="DetailView" />
+    </LocalizationGroup>
+  </Localization>
+  <NavigationItems NavigationStyle="Accordion" ShowImages="False" DefaultChildItemsDisplayStyle="List">
+    <Items>
+      <Item Id="Default" Caption="Home Liberary">
+        <Items>
+          <Item Id="Book_ListView" ImageName="Copy" Index="1" />
+          <Item Id="Loan_ListView" ImageName="BO_Transition" Index="2" />
+          <Item Id="Person_ListView" ImageName="BO_Customer" Index="3" />
+          <Item Id="Author_ListView" ImageName="BO_Lead" Index="4" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options UIType="TabbedMDI" FormStyle="Ribbon" ShowTabImage="False">
+    <LayoutManagerOptions EnableLayoutGroupImages="False" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="22.1.11.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.1.11.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="22.1.11.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>
